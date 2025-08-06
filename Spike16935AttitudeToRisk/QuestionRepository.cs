@@ -17,7 +17,7 @@ internal class QuestionSetRepository
         return _questionSets.FirstOrDefault(qs => qs.Id == id);
     }
 
-    private QuestionSet QuestionOneSet =>
+    private static QuestionSet QuestionOneSet =>
         new()
         {
             Id = Guid.Parse("7bd9eb71-270e-444b-89de-eda8f4db8e47"),
@@ -39,7 +39,6 @@ internal class QuestionSetRepository
             Id = Guid.Parse("b0b8423c-428a-494a-91fc-d3587e77a00d"),
             Title = "Imagine your investment dropped in value by 10% in a year. What would you do?",
             NextQuestionSetId = QuestionThreeSet.Id,
-            PreviousQuestionSetId = QuestionOneSet.Id,
             Questions = new List<Question>()
             {
                 new() { Id = Guid.NewGuid(), Text = "Sell straight away, I couldn’t cope with the loss", Weighting = 1 },
@@ -56,7 +55,6 @@ internal class QuestionSetRepository
             Id = Guid.Parse("b808743c-6553-4c17-b2ca-effd618cd706"),
             Title = "What’s your goal with this investment?",
             NextQuestionSetId = QuestionFourSet.Id,
-            PreviousQuestionSetId = QuestionTwoSet.Id,
             Questions = new List<Question>()
             {
                 new() { Id = Guid.NewGuid(), Text = "Keep my money safe, even if it grows slowly", Weighting = 1 },
@@ -73,7 +71,6 @@ internal class QuestionSetRepository
             Id = Guid.Parse("d540fd90-cf68-4a24-a680-e869d1c7efa1"),
             Title = "How long do you plan to keep this money invested?",
             NextQuestionSetId = QuestionFiveSet.Id,
-            PreviousQuestionSetId = QuestionThreeSet.Id,
             Questions = new List<Question>()
             {
                 new() { Id = Guid.NewGuid(), Text = "Less than 3 years", Weighting = 1 },
@@ -89,7 +86,6 @@ internal class QuestionSetRepository
         {
             Id = Guid.Parse("a6678d48-967b-4176-b224-e635a516e559"),
             Title = "Which best describes your experience with investing?",
-            PreviousQuestionSetId = QuestionFourSet.Id,
             Questions = new List<Question>()
             {
                 new() { Id = Guid.NewGuid(), Text = "I’ve never invested before", Weighting = 1 },
