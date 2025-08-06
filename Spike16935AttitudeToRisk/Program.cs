@@ -1,5 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-using Spike16935AttitudeToRisk;
+﻿using Spike16935AttitudeToRisk;
 
 Console.WriteLine("Everyone feels differently about taking risks with their money. These questions will help you work out what’s right for you.");
 Console.WriteLine("");
@@ -12,10 +11,10 @@ var totalWeighting = 0;
 while (questionSet != null)
 {
     Console.WriteLine(questionSet.Title);
-    for (int i = 0; i < questionSet.Questions.Count; i++) // Corrected loop syntax
+    for (int i = 0; i < questionSet.Questions.Count; i++) 
     {
-        var q = questionSet.Questions[i]; // Access the question at index i
-        Console.WriteLine("{0}. {1}", i+1, q.Text); // Print the question text
+        var q = questionSet.Questions[i]; 
+        Console.WriteLine("{0}. {1}", i+1, q.Text); 
     }
     Console.Write("Please select an option (1-{0}): ", questionSet.Questions.Count);
     var input = Console.ReadLine();
