@@ -1,7 +1,6 @@
 ﻿using Spike16935AttitudeToRisk;
 
 Console.WriteLine("Everyone feels differently about taking risks with their money. These questions will help you work out what’s right for you.");
-Console.WriteLine("");
 
 var repo = new QuestionSetRepository();
 var questionSet = repo.GetQuestionSetById(Guid.Parse("7bd9eb71-270e-444b-89de-eda8f4db8e47"));
@@ -10,11 +9,12 @@ var totalWeighting = 0;
 
 while (questionSet != null)
 {
+    Console.WriteLine("");
     Console.WriteLine(questionSet.Title);
-    for (int i = 0; i < questionSet.Questions.Count; i++) 
+    for (int i = 0; i < questionSet.Questions.Count; i++)
     {
-        var q = questionSet.Questions[i]; 
-        Console.WriteLine("{0}. {1}", i+1, q.Text); 
+        var q = questionSet.Questions[i];
+        Console.WriteLine("{0}. {1}", i + 1, q.Text);
     }
     Console.Write("Please select an option (1-{0}): ", questionSet.Questions.Count);
     var input = Console.ReadLine();
@@ -28,7 +28,7 @@ while (questionSet != null)
             questionSet = repo.GetQuestionSetById(questionSet.NextQuestionSetId.Value);
         else
             questionSet = null;
-    }   
+    }
     else
     {
         Console.WriteLine("Invalid input, please enter a number between 1 and 5.");

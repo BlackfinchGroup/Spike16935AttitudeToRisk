@@ -6,6 +6,7 @@ internal class QuestionSet
     public required List<Question> Questions { get; set; }
     public required string Title { get; internal set; }
     public Guid? NextQuestionSetId { get; set; }
+    public Guid? PreviousQuestionSetId { get; set; }
 }
 
 internal class Question
