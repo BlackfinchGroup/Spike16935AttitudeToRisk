@@ -35,6 +35,8 @@ while (questionSet != null)
     }
 }
 
+Console.WriteLine("");
+Console.WriteLine("");
 Console.WriteLine("Total weighting is {0}.", totalWeighting);
 
 Console.ReadLine();
