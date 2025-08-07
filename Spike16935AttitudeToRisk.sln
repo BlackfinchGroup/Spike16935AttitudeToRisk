@@ -5,6 +5,18 @@ VisualStudioVersion = 17.13.36105.23 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spike16935AttitudeToRisk", "Spike16935AttitudeToRisk\Spike16935AttitudeToRisk.csproj", "{E3E6EB8E-E0DB-429E-815E-E4E8DE750FD7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttitudeQuestions.AppHost", "AttitudeQuestions\AttitudeQuestions.AppHost\AttitudeQuestions.AppHost.csproj", "{4345A387-78A7-42E2-9F81-18556D32A0FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttitudeQuestions.ServiceDefaults", "AttitudeQuestions\AttitudeQuestions.ServiceDefaults\AttitudeQuestions.ServiceDefaults.csproj", "{56FD760E-EE7F-7FDA-2594-3B9F97884F25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttitudeQuestions.API", "AttitudeQuestions.API\AttitudeQuestions.API.csproj", "{495AD5E4-7262-7EF7-C0FA-3A51C4E6A6D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttitudeQuestions.Application", "AttitudeQuestions.Application\AttitudeQuestions.Application.csproj", "{9B300995-71E9-46EC-8D3D-3BF8618332A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttitudeQuestions.Domain", "AttitudeQuestions.Domain\AttitudeQuestions.Domain.csproj", "{90532437-7A67-473A-9D2D-120F5AB11BB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AttitudeQuestions.Infrastructure", "AttitudeQuestions.Infrastructure\AttitudeQuestions.Infrastructure.csproj", "{5B51F356-62E1-46F7-8FD9-D79FEE55A113}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +27,30 @@ Global
 		{E3E6EB8E-E0DB-429E-815E-E4E8DE750FD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3E6EB8E-E0DB-429E-815E-E4E8DE750FD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E3E6EB8E-E0DB-429E-815E-E4E8DE750FD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4345A387-78A7-42E2-9F81-18556D32A0FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4345A387-78A7-42E2-9F81-18556D32A0FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4345A387-78A7-42E2-9F81-18556D32A0FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4345A387-78A7-42E2-9F81-18556D32A0FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56FD760E-EE7F-7FDA-2594-3B9F97884F25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56FD760E-EE7F-7FDA-2594-3B9F97884F25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56FD760E-EE7F-7FDA-2594-3B9F97884F25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56FD760E-EE7F-7FDA-2594-3B9F97884F25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{495AD5E4-7262-7EF7-C0FA-3A51C4E6A6D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{495AD5E4-7262-7EF7-C0FA-3A51C4E6A6D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{495AD5E4-7262-7EF7-C0FA-3A51C4E6A6D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{495AD5E4-7262-7EF7-C0FA-3A51C4E6A6D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B300995-71E9-46EC-8D3D-3BF8618332A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B300995-71E9-46EC-8D3D-3BF8618332A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B300995-71E9-46EC-8D3D-3BF8618332A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B300995-71E9-46EC-8D3D-3BF8618332A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90532437-7A67-473A-9D2D-120F5AB11BB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90532437-7A67-473A-9D2D-120F5AB11BB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90532437-7A67-473A-9D2D-120F5AB11BB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90532437-7A67-473A-9D2D-120F5AB11BB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B51F356-62E1-46F7-8FD9-D79FEE55A113}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B51F356-62E1-46F7-8FD9-D79FEE55A113}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B51F356-62E1-46F7-8FD9-D79FEE55A113}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B51F356-62E1-46F7-8FD9-D79FEE55A113}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
