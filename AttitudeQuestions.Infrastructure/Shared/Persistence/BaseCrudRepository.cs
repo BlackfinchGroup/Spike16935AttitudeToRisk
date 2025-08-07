@@ -49,11 +49,9 @@ public class BaseCrudRepository<T>(DbContext dbContext) : IRepository<T> where T
 
 public class BaseQueryRepository<T>(DbContext dbContext) where T : AggregateRoot<Guid>
 {
-    protected IQueryable<T> AsQueryable(bool allowDeleted = false)
+    protected IQueryable<T> AsQueryable()
     {
-        return dbContext
-            .Set<T>()
-            .Where(u => allowDeleted || EF.Property<bool>(u, "IsDeleted") == false);
+        return dbContext.Set<T>();
     }
 
     public async Task<T?> Get(Guid id, CancellationToken cancellationToken = default)

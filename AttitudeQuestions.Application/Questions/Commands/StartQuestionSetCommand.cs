@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace AttitudeQuestions.Application.Questions;
+namespace AttitudeQuestions.Application.Questions.Commands;
 
 public static class StartQuestionsEndpoint
 {

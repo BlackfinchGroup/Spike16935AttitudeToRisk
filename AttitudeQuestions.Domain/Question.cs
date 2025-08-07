@@ -1,8 +1,8 @@
 ﻿namespace AttitudeQuestions.Domain;
 
-public class Question
+public class Question(Guid id, string text, int weighting)
 {
-    public Guid Id { get; set; }
-    public required string Text { get; set; }
-    public int Weighting { get; set; }
+    public Guid Id { get; private set; } = id;
+    public string Text { get; private set; } = text;
+    public int Weighting { get; private set; } = weighting;
 }

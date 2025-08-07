@@ -1,5 +1,7 @@
-﻿using AttitudeQuestions.Application.Shared;
+﻿using AttitudeQuestions.Application.Questions.Queries.Interfaces;
+using AttitudeQuestions.Application.Shared;
 using AttitudeQuestions.Domain;
+using AttitudeQuestions.Infrastructure.Questions;
 using AttitudeQuestions.Infrastructure.QuestionSetSessions;
 using AttitudeQuestions.Infrastructure.Shared.Persistence.Options;
 using Microsoft.Extensions.Configuration;
@@ -45,6 +47,7 @@ public static class MongoStoreBuilderExtensions
         storeBuilder.Builder.Services.AddDbContext<QuestionDbContext>();
 
         storeBuilder.Builder.Services.AddScoped<IRepository<QuestionSetSession>, QuestionSetSessionRepository>();
+        storeBuilder.Builder.Services.AddScoped<IQuestionSetQueryService, QuestionSetQueryService>();
 
         return storeBuilder;
     }

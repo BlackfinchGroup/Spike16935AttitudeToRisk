@@ -1,11 +1,23 @@
-﻿namespace AttitudeQuestions.Domain;
+﻿using AttitudeQuestions.Domain.Shared;
 
-public class QuestionSet
+namespace AttitudeQuestions.Domain;
+
+public class QuestionSet : AggregateRoot<Guid>
 {
-    public Guid Id { get; set; }
-    public required string Title { get; set; }
-    public required string SubTitle { get; set; }
-    public required List<Question> Questions { get; set; }
-    public Guid? NextQuestionSetId { get; set; }
-    public ChartData? ChartData { get; set; }
+    public QuestionSet(Guid id, string title, string subTitle, List<Question> questions, Guid? nextQuestionSetId) : base(id)
+    {
+        Title = title;
+        SubTitle = subTitle;
+        Questions = questions;
+        NextQuestionSetId = nextQuestionSetId;
+    }
+
+    private QuestionSet(Guid id) : base(id)
+    {
+    }
+
+    public string Title { get; private set; }
+    public string SubTitle { get; private set; }
+    public List<Question> Questions { get; private set; }
+    public Guid? NextQuestionSetId { get; private set; }
 }
