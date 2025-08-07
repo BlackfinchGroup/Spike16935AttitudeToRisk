@@ -1,3 +1,4 @@
+using AttitudeQuestions.API;
 using AttitudeQuestions.Application;
 using AttitudeQuestions.Application.Shared;
 using AttitudeQuestions.Infrastructure.Shared.Persistence;
@@ -30,9 +31,10 @@ app.MapDefaultEndpoints();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+    await DataSeeder.SeedDevelopmentDataAsync(app);
 }
 
+app.MapOpenApi();
 app.UseSwaggerUI(x =>
 {
     x.SwaggerEndpoint("/openapi/v1.json", "v1");
@@ -52,7 +54,7 @@ var summaries = new[]
 
 app.MapGet("/weatherforecast", () =>
 {
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
+    var forecast = Enumerable.Range(1, 5).Select(index =>
         new WeatherForecast
         (
             DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
