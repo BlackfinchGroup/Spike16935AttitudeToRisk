@@ -33,6 +33,13 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
+app.UseSwaggerUI(x =>
+{
+    x.SwaggerEndpoint("/openapi/v1.json", "v1");
+    x.DisplayOperationId();
+    x.DisplayRequestDuration();
+});
+
 app.UseHttpsRedirection();
 
 app.MapGroup("/questions")
