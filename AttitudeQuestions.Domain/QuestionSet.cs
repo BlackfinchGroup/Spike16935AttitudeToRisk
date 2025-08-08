@@ -12,12 +12,12 @@ public class QuestionSet : AggregateRoot<Guid>
         NextQuestionSetId = nextQuestionSetId;
     }
 
-    private QuestionSet(Guid id) : base(id)
+    private QuestionSet(): base(Guid.NewGuid())
     {
     }
 
-    public string Title { get; private set; }
-    public string SubTitle { get; private set; }
-    public List<Question> Questions { get; private set; }
+    public string Title { get; private set; } = null!;
+    public string SubTitle { get; private set; } = null!;
+    public List<Question>? Questions { get; private set; } = [];
     public Guid? NextQuestionSetId { get; private set; }
 }

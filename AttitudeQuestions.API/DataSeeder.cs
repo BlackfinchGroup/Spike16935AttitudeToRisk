@@ -29,8 +29,14 @@ public static class DataSeeder
         }
     }
 
+    private static readonly Guid QuestionOneId = Guid.Parse("7bd9eb71-270e-444b-89de-eda8f4db8e47");
+    private static readonly Guid QuestionTwoId = Guid.Parse("b0b8423c-428a-494a-91fc-d3587e77a00d");
+    private static readonly Guid QuestionThreeId = Guid.Parse("b808743c-6553-4c17-b2ca-effd618cd706");
+    private static readonly Guid QuestionFourId = Guid.Parse("d540fd90-cf68-4a24-a680-e869d1c7efa1");
+    private static readonly Guid QuestionFiveId = Guid.Parse("a6678d48-967b-4176-b224-e635a516e559");
+
     private static QuestionSet QuestionOneSet =>
-        new(Guid.Parse("7bd9eb71-270e-444b-89de-eda8f4db8e47"),
+        new(QuestionOneId,
             "When you think about investing, how do you feel?",
             string.Empty,
             [            
@@ -40,10 +46,10 @@ public static class DataSeeder
                 new Question(Guid.NewGuid(), "I understand there’ll be ups and downs and I’m comfortable with that", 4),
                 new Question(Guid.NewGuid(), "I’m happy to take more risk if it means a better chance of growth", 5)
             ],
-            QuestionTwoSet.Id);
+            QuestionTwoId);
 
     private static QuestionSet QuestionTwoSet =>
-        new(Guid.Parse("b0b8423c-428a-494a-91fc-d3587e77a00d"),
+        new(QuestionTwoId,
             "Imagine your investment dropped in value by 10% in a year. What would you do?",
             string.Empty,
             [
@@ -54,10 +60,10 @@ public static class DataSeeder
                 new Question(Guid.NewGuid(), "Stay invested and trust things will bounce back", 4),
                 new Question(Guid.NewGuid(), "Invest more, it could be a good time to buy", 5)
             ],
-            QuestionThreeSet.Id);
+            QuestionThreeId);
 
     private static QuestionSet QuestionThreeSet =>
-        new(Guid.Parse("b808743c-6553-4c17-b2ca-effd618cd706"),
+        new(QuestionThreeId,
             "What’s your goal with this investment?",
             string.Empty,
             [
@@ -68,10 +74,10 @@ public static class DataSeeder
                 new Question(Guid.NewGuid(), "Aim for strong growth, accepting short-term ups and downs", 4 ),
                 new Question(Guid.NewGuid(), "Maximise long-term growth, even with bigger swings along the way",  5 ),
             ],
-            QuestionFourSet.Id);
+            QuestionFourId);
 
     private static QuestionSet QuestionFourSet =>
-        new(Guid.Parse("d540fd90-cf68-4a24-a680-e869d1c7efa1"),
+        new(QuestionFourId,
             "How long do you plan to keep this money invested?",
             string.Empty,
             [
@@ -82,10 +88,10 @@ public static class DataSeeder
                 new Question(Guid.NewGuid(), "10–15 years", 4),
                 new Question(Guid.NewGuid(), "15+ years", 5),
             ],
-            QuestionFiveSet.Id);
+            QuestionFiveId);
 
     private static QuestionSet QuestionFiveSet =>
-        new(Guid.Parse("a6678d48-967b-4176-b224-e635a516e559"),
+        new(QuestionFiveId,
             "Which best describes your experience with investing?",
             string.Empty,
             [
