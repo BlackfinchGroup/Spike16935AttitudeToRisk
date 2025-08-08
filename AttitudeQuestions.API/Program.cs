@@ -2,6 +2,7 @@ using AttitudeQuestions.API;
 using AttitudeQuestions.Application;
 using AttitudeQuestions.Application.Shared;
 using AttitudeQuestions.Infrastructure.Shared.Persistence;
+using AttitudeQuestions.Infrastructure.Shared.Persistence.Options.Extensions;
 using AttitudeQuestions.ServiceDefaults;
 using MediatR;
 

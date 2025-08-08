@@ -1,5 +1,6 @@
 ﻿using AttitudeQuestions.Domain;
 using AttitudeQuestions.Infrastructure.Shared.Persistence.Options;
+using AttitudeQuestions.Infrastructure.Shared.Persistence.Options.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
@@ -19,8 +20,8 @@ public class QuestionDbContext(IMongoClient mongoClient, IOptions<RepositoryOpti
     {
         base.OnModelCreating(modelBuilder);
 
-        modelBuilder.Entity<QuestionSetSession>().ToCollection("question-set-sessions");
-        modelBuilder.Entity<Question>().ToCollection("questions");
-        modelBuilder.Entity<QuestionSet>().ToCollection("question-sets");
+        modelBuilder.Entity<QuestionSetSession>().ToCollection("question-set-sessions").AddAuditProperties();
+        modelBuilder.Entity<Question>().ToCollection("questions").AddAuditProperties();
+        modelBuilder.Entity<QuestionSet>().ToCollection("question-sets").AddAuditProperties();
     }
 }

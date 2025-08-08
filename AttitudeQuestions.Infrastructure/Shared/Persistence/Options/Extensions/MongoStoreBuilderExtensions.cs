@@ -3,7 +3,6 @@ using AttitudeQuestions.Application.Shared;
 using AttitudeQuestions.Domain;
 using AttitudeQuestions.Infrastructure.Questions;
 using AttitudeQuestions.Infrastructure.QuestionSetSessions;
-using AttitudeQuestions.Infrastructure.Shared.Persistence.Options;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -12,7 +11,7 @@ using MongoDB.Bson.Serialization;
 using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Driver;
 
-namespace AttitudeQuestions.Infrastructure.Shared.Persistence;
+namespace AttitudeQuestions.Infrastructure.Shared.Persistence.Options.Extensions;
 
 public static class MongoStoreBuilderExtensions
 {

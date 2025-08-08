@@ -20,7 +20,7 @@ public static class GetQuestionEndpoint
 
         var result = await mediator.Send(command);
 
-        return result.MatchResult(success => TypedResults.NoContent());
+        return result.MatchResult(success => TypedResults.Ok(success));
     }
 }
 
@@ -45,7 +45,7 @@ public class GetQuestionSetQueryHandler(IQuestionSetQueryService queryService, I
             NextQuestionSetId = questionSet.NextQuestionSetId,
             Questions = questionSet.Questions.Select(q => new QuestionResponse()
             {
-                Id = q.Id,
+                Id = q.QuestionId,
                 Text = q.Text,
                 Weighting = q.Weighting
             }).ToList()
