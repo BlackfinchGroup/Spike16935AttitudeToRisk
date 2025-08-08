@@ -18,6 +18,6 @@ public class QuestionSet : AggregateRoot<Guid>
 
     public string Title { get; private set; } = null!;
     public string SubTitle { get; private set; } = null!;
-    public List<Question>? Questions { get; private set; } = [];
+    public List<Question> Questions { get; private set; } = [];
     public Guid? NextQuestionSetId { get; private set; }
 }
