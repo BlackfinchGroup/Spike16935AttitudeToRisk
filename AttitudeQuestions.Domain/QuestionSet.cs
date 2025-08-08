@@ -2,6 +2,8 @@
 
 namespace AttitudeQuestions.Domain;
 
+// Might need something above questionset to group a related set of questions sets together
+
 public class QuestionSet : AggregateRoot<Guid>
 {
     public QuestionSet(Guid id, string title, string subTitle, List<Question> questions, Guid? nextQuestionSetId) : base(id)

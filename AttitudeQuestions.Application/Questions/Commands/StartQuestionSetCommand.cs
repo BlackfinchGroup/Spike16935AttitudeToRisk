@@ -15,17 +15,13 @@ public static class StartQuestionsEndpoint
         public Guid SessionId { get; set; }
     }
 
-    public static async Task<IResult> Handle([FromRoute]Guid id, [FromBody] StartQuestionsRequest request, IMediator mediator)
+    public static async Task<IResult> Handle(IMediator mediator)
     {
-        var command = new StartQuestionSetCommand()
-        {
-            QuestionSetId = id,
-            SessionsId = request.SessionId
-        };
+        var command = new StartQuestionSetCommand();
 
         var result = await mediator.Send(command);
 
-        return result.MatchResult(success => TypedResults.NoContent());
+        return result.MatchResult(success => TypedResults.Created(result.Value.ToString()));
     }
 }
 
@@ -34,15 +30,16 @@ public class StartQuestionSetCommandHandler(IRepository<QuestionSetSession> repo
 {
     public async Task<ErrorOr<CommandResponse>> Handle(StartQuestionSetCommand request, CancellationToken cancellationToken)
     {
-        await repository.Create(
-            new QuestionSetSession(request.SessionsId, request.QuestionSetId), cancellationToken);
+        var session = new QuestionSetSession(Guid.NewGuid());
 
-        return CommandResponse.Default;
+        await repository.Create(session, cancellationToken);
+
+        return CommandResponse.From(session.Id);
     }
 }
 
 public class StartQuestionSetCommand : IRequest<ErrorOr<CommandResponse>>
 {
     public Guid QuestionSetId { get; set; }
-    public Guid SessionsId { get; set; }
+    public Guid SessionId { get; set; }
 }

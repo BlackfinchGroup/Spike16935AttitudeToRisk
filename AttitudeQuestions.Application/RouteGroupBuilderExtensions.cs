@@ -12,12 +12,17 @@ public static class RouteGroupBuilderExtensions
 {
     public static RouteGroupBuilder MapQuestionsApi(this RouteGroupBuilder group)
     {
-        group.MapPost("/start/{id:guid}", StartQuestionsEndpoint.Handle)
-             .WithActionName("StartQuestionSession");
+        group.MapPost("/start", StartQuestionsEndpoint.Handle)
+            .WithActionName("StartQuestionSession")
+            .Produces(StatusCodes.Status201Created);
 
         group.MapGet("/{id:guid}", GetQuestionEndpoint.Handle)
             .WithActionName("GetQuestionSet")
             .Produces<QuestionSetResponse>();
+
+        group.MapPost("/answer/{id:guid}", AnswerQuestion.Handle)
+            .WithActionName("AnswerQuestion")
+            .Produces(StatusCodes.Status204NoContent);
 
         group.WithTags("Questions")
             .WithName("Questions");

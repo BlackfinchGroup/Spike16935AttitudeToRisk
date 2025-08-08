@@ -2,18 +2,13 @@
 
 namespace AttitudeQuestions.Domain;
 
-public class QuestionSetSession : AggregateRoot<Guid>
+public class QuestionSetSession(Guid id) : AggregateRoot<Guid>(id)
 {
-    public QuestionSetSession(Guid id, Guid questionSetId) : base(id)
-    {
-        QuestionSetId = questionSetId;
-    }
-    public Guid QuestionSetId { get; private set; }
-    public List<QuestionAnswers> Answers { get; private set; } = new List<QuestionAnswers>();
-    public DateTime CreatedAt { get; private set; } = DateTime.UtcNow;
+    public List<QuestionAnswer> Answers { get; private set; } = new List<QuestionAnswer>();
 }
 
-public class QuestionAnswers
+public class QuestionAnswer(Guid questionId, int weighting)
 {
-    public Guid QuestionId { get; set; }
+    public Guid QuestionId { get; private set; } = questionId;
+    public int Weighting { get; private set; } = weighting;
 }
