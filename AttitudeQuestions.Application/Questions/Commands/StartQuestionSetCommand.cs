@@ -3,10 +3,11 @@ using AttitudeQuestions.Domain;
 using ErrorOr;
 using MediatR;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace AttitudeQuestions.Application.Questions.Commands;
+
+// Be nice to get start a sessions, and use the session id to get the next question over and over again, somehow
 
 public static class StartQuestionsEndpoint
 {
