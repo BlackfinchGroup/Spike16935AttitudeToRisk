@@ -13,7 +13,6 @@ public class QuestionDbContext(IMongoClient mongoClient, IOptions<RepositoryOpti
     : BaseDbContext<QuestionDbContext>(mongoClient, repositoryOptions, environment)
 {
     public DbSet<QuestionSetSession> QuestionSetSessions { get; init; }
-    public DbSet<Question> Questions { get; init; }
     public DbSet<QuestionSet> QuestionSets { get; init; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -21,7 +20,6 @@ public class QuestionDbContext(IMongoClient mongoClient, IOptions<RepositoryOpti
         base.OnModelCreating(modelBuilder);
 
         modelBuilder.Entity<QuestionSetSession>().ToCollection("question-set-sessions").AddAuditProperties();
-        modelBuilder.Entity<Question>().ToCollection("questions").AddAuditProperties();
         modelBuilder.Entity<QuestionSet>().ToCollection("question-sets").AddAuditProperties();
     }
 }
